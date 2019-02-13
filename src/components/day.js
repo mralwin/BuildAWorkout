@@ -4,7 +4,7 @@ class Day extends React.Component {
   render() {
     return (
       <div className="a">
-        <h2>I am</h2>
+        <h2>I am {this.props.index}</h2>
       </div>
     );
   }
