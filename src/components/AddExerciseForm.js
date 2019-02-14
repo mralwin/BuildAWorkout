@@ -22,14 +22,14 @@ class AddExerciseForm extends React.Component {
       rest: this.restRef.current.value,
       progress: this.progressRef.current.value
     };
-    this.props.addexercise(exercise);
+    this.props.addExercise(exercise);
     event.currentTarget.reset();
   };
   render() {
     return (
       <form onSubmit={this.createExercise}>
         <input name="name" ref={this.nameRef} type="text" placeholder="Name" />
-        <input name="set" ref={this.setRef} type="number" placeholder="Sets" />
+        <input name="set" ref={this.setRef} type="text" placeholder="Sets" />
         <input name="rep" ref={this.repRef} type="text" placeholder="Reps" />
         <input name="rest" ref={this.restRef} type="text" placeholder="Rest" />
         <input
@@ -39,6 +39,7 @@ class AddExerciseForm extends React.Component {
           placeholder="Weight increment"
         />
         <button type="submit">Add Exercise</button>
+        <h2>{this.props.testProp}</h2>
       </form>
     );
   }

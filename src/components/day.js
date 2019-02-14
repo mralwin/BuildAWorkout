@@ -18,7 +18,10 @@ class Day extends React.Component {
       <div className="a">
         <h2>I am {this.props.index}</h2>
         <Modal show={this.state.show} handleClose={this.hideModal}>
-          <AddExerciseForm />
+          <AddExerciseForm
+            addExercise={this.props.addExercise}
+            testProp={this.props.index}
+          />
         </Modal>
         <button type="button" onClick={this.showModal}>
           open

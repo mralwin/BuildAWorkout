@@ -7,7 +7,7 @@ class Week extends React.Component {
       <div>
         <h2> i am a week </h2>
         {Object.keys(this.props.day).map(key => (
-          <Day key={key} index={key} />
+          <Day key={key} index={key} addExercise={this.props.addExercise} />
         ))}
       </div>
     );

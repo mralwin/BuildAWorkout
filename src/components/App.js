@@ -15,11 +15,19 @@ class App extends React.Component {
     }
   };
 
+  addExersise = exercise => {
+    const exercises = { ...this.state.exercises };
+    exercises[`exercise${Date.now()}`] = exercise;
+    this.setState({
+      exercises: exercises
+    });
+  };
+
   render() {
     return (
       <div>
         <h2>i am a app</h2>
-        <Week day={this.state.day} />
+        <Week day={this.state.day} addExercise={this.addExersise} />
       </div>
     );
   }
