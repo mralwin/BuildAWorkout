@@ -12,12 +12,21 @@ class App extends React.Component {
       friday: "friday",
       saturday: "saturday",
       sunday: "sunday"
+    },
+    exercises: {
+      monday: {},
+      teusday: {},
+      wednesday: {},
+      thursday: {},
+      friday: {},
+      saturday: {},
+      sunday: {}
     }
   };
 
   addExersise = exercise => {
     const exercises = { ...this.state.exercises };
-    exercises[`exercise${Date.now()}`] = exercise;
+    exercises[`${exercise.day}`][`${exercise.day}-${exercise.name}`] = exercise;
     this.setState({
       exercises: exercises
     });
@@ -27,7 +36,11 @@ class App extends React.Component {
     return (
       <div>
         <h2>i am a app</h2>
-        <Week day={this.state.day} addExercise={this.addExersise} />
+        <Week
+          day={this.state.day}
+          exercises={this.state.exercises}
+          addExercise={this.addExersise}
+        />
       </div>
     );
   }

@@ -39,7 +39,6 @@ class AddExerciseForm extends React.Component {
           placeholder="Weight increment"
         />
         <button type="submit">Add Exercise</button>
-        <h2>{this.props.testProp}</h2>
       </form>
     );
   }
