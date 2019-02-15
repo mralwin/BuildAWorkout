@@ -15,11 +15,21 @@ class Day extends React.Component {
   };
 
   render() {
+    const raw = this.props.exercises;
+    const allowed = this.props.index;
+
+    const filtered = Object.keys(raw)
+      .filter(key => allowed.includes(key))
+      .reduce((obj, key) => {
+        obj[key] = raw[key];
+        return obj;
+      }, {});
+
     return (
       <div className="a">
         <h2>I am {this.props.index}</h2>
-        {Object.keys(this.props.exercises).map(key => (
-          <Exercise key={key} index={key} details={this.props.exercises[key]} />
+        {Object.keys(filtered).map(key => (
+          <Exercise key={key} index={key} details={filtered[key]} />
         ))}
         <Modal show={this.state.show} handleClose={this.hideModal}>
           <AddExerciseForm
