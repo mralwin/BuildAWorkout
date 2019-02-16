@@ -32,6 +32,18 @@ class App extends React.Component {
     });
   };
 
+  updateExercise = (key, name, updatedExercise) => {
+    const exercises = { ...this.state.exercises };
+    exercises[key][name] = updatedExercise;
+    this.setState({ exercises: exercises });
+  };
+
+  deleteExercise = key => {
+    const exercises = { ...this.state.exercises };
+    exercises[key] = null;
+    this.setState({ exercises: exercises });
+  };
+
   render() {
     return (
       <div>
@@ -40,6 +52,8 @@ class App extends React.Component {
           day={this.state.day}
           exercises={this.state.exercises}
           addExercise={this.addExersise}
+          updateExercise={this.updateExersise}
+          deleteExercise={this.deleteExersise}
         />
       </div>
     );

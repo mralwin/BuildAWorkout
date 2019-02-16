@@ -6,10 +6,8 @@
 .a {
   float: left; /* the default for span */
   width: 13%;
-  height: 100px;
   padding: 5px;
-  border: 1px solid blue;
-  background-color: yellow;
+  border: 1px solid black;
 }
 
 .modal {

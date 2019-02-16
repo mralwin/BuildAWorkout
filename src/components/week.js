@@ -13,6 +13,8 @@ class Week extends React.Component {
             index={key}
             exercises={props.exercises}
             addExercise={props.addExercise}
+            updateExercise={props.updateExersise}
+            deleteExercise={props.deleteExersise}
           />
         ))}
       </div>

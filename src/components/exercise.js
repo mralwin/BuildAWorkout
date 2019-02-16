@@ -3,7 +3,15 @@ import React from "react";
 class Exercise extends React.Component {
   renderExercise = key => {
     const exercise = this.props.details[key];
-    return <h2>{exercise.name}</h2>;
+    const n = parseInt(exercise.set); // Or something else
+    return (
+      <div>
+        <h3>{exercise.name}</h3>
+        {[...Array(n)].map((e, i) => (
+          <button key={key}>{exercise.rep} </button>
+        ))}
+      </div>
+    );
   };
 
   render() {
