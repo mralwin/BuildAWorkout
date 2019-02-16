@@ -2,13 +2,14 @@ import React from "react";
 
 class EditExercise extends React.Component {
   handleChange = event => {
+    alert(event.currentTarget.value);
     const updatedExercise = {
-      ...this.props.details[key],
+      ...this.props.details,
       [event.currentTarget.name]: event.currentTarget.value
     };
     this.props.updateExercise(
       this.props.index,
-      [event.currentTarget.name],
+      event.currentTarget.value,
       updatedExercise
     );
   };
