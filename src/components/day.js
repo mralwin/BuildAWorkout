@@ -1,7 +1,7 @@
 import React from "react";
 import Modal from "./Modal";
 import AddExerciseForm from "./AddExerciseForm";
-import EditExercise from "./EditExercise";
+import ExerciseWrapper from "./ExerciseWrapper";
 
 class Day extends React.Component {
   state = { show: false };
@@ -29,12 +29,13 @@ class Day extends React.Component {
       <div className="a">
         <h2>I am {this.props.index}</h2>
         {Object.keys(filtered).map(key => (
-          <EditExercise
+          <ExerciseWrapper
             key={key}
             index={key}
+            day={this.props.index}
             details={filtered[key]}
-            updateExercise={this.props.updateExersise}
-            deleteExercise={this.props.deleteExersise}
+            updateExercise={this.props.updateExercise}
+            deleteExercise={this.props.deleteExercise}
           />
         ))}
         <Modal show={this.state.show} handleClose={this.hideModal}>

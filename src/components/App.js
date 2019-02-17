@@ -32,9 +32,11 @@ class App extends React.Component {
     });
   };
 
-  updateExercise = (key, name, updatedExercise) => {
+  updateExercise = (key, index, name, updatedExercise) => {
+    console.log(name);
+
     const exercises = { ...this.state.exercises };
-    exercises[key][name] = updatedExercise;
+    exercises[key][index][name] = updatedExercise;
     this.setState({ exercises: exercises });
   };
 
@@ -52,8 +54,8 @@ class App extends React.Component {
           day={this.state.day}
           exercises={this.state.exercises}
           addExercise={this.addExersise}
-          updateExercise={this.updateExersise}
-          deleteExercise={this.deleteExersise}
+          updateExercise={this.updateExercise}
+          deleteExercise={this.deleteExercise}
         />
       </div>
     );
