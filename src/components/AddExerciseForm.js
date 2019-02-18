@@ -6,7 +6,7 @@ class AddExerciseForm extends React.Component {
   setRef = React.createRef();
   repRef = React.createRef();
   restRef = React.createRef();
-  progressRef = React.createRef();
+  weightRef = React.createRef();
 
   static propTypes = {
     addExercise: PropTypes.func
@@ -14,13 +14,14 @@ class AddExerciseForm extends React.Component {
 
   createExercise = event => {
     event.preventDefault();
+    event.stopPropagation();
     const exercise = {
       day: this.props.day,
       name: this.nameRef.current.value,
       set: this.setRef.current.value,
       rep: this.repRef.current.value,
       rest: this.restRef.current.value,
-      progress: this.progressRef.current.value
+      weight: this.weightRef.current.value
     };
     this.props.addExercise(exercise);
     event.currentTarget.reset();
@@ -35,13 +36,13 @@ class AddExerciseForm extends React.Component {
           name="rest"
           ref={this.restRef}
           type="number"
-          placeholder="Rest"
+          placeholder="Rest In Seconds"
         />
         <input
-          name="progress"
-          ref={this.progressRef}
-          type="text"
-          placeholder="Weight increment"
+          name="weight"
+          ref={this.weightRef}
+          type="number"
+          placeholder="Starting Weight"
         />
         <button type="submit">Add Exercise</button>
       </form>

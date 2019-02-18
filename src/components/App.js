@@ -1,6 +1,5 @@
 import React from "react";
-import Day from "./day";
-import Week from "./week";
+import Selector from "./Selector";
 
 class App extends React.Component {
   state = {
@@ -26,31 +25,32 @@ class App extends React.Component {
 
   addExersise = exercise => {
     const exercises = { ...this.state.exercises };
-    exercises[`${exercise.day}`][`${exercise.day}-${exercise.name}`] = exercise;
+    exercises[`${exercise.day}`][`exercise${Date.now()}`] = exercise;
     this.setState({
       exercises: exercises
     });
   };
 
   updateExercise = (key, index, name, updatedExercise) => {
-    console.log(name);
-
     const exercises = { ...this.state.exercises };
     exercises[key][index][name] = updatedExercise;
     this.setState({ exercises: exercises });
   };
 
-  deleteExercise = key => {
+  deleteExercise = (key, index) => {
+    alert("i am delete");
+    /*
     const exercises = { ...this.state.exercises };
-    exercises[key] = null;
+    exercises[key][index] = null;
     this.setState({ exercises: exercises });
+    */
   };
 
   render() {
     return (
       <div>
         <h2>i am a app</h2>
-        <Week
+        <Selector
           day={this.state.day}
           exercises={this.state.exercises}
           addExercise={this.addExersise}
