@@ -17,7 +17,6 @@ class Day extends React.Component {
   render() {
     const raw = this.props.exercises;
     const allowed = this.props.index;
-
     const filtered = Object.keys(raw)
       .filter(key => allowed.includes(key))
       .reduce((obj, key) => {
