@@ -38,10 +38,8 @@ class App extends React.Component {
   };
 
   deleteExercise = (key, index) => {
-    alert("i am delete");
-    /*
     const exercises = { ...this.state.exercises };
-    exercises[key][index] = null;
+    delete exercises[key][index];
     this.setState({ exercises: exercises });
     */
   };

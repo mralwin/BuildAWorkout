@@ -11,7 +11,7 @@ class ExerciseWrapper extends React.Component {
         day={this.props.day}
         details={props.details}
         updateExercise={props.updateExercise}
-        deleteExercise={props.updateExercise}
+        deleteExercise={props.deleteExercise}
       />
     ));
   }

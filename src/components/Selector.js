@@ -2,14 +2,11 @@ import React from "react";
 import WorkoutEditor from "./WorkoutEditor";
 import SelectorDefault from "./SelectorDefault";
 import CurrentDay from "./CurrentDay";
+import Button from "./button";
 
 class Selector extends React.Component {
-  constructor(props) {
-    super(props);
-    this.showEditor = this.showEditor.bind(this);
-    this.showCurrent = this.showCurrent.bind(this);
-    this.state = { show: SelectorDefault };
-  }
+  state = { show: SelectorDefault };
+
 
   showEditor = () => {
     this.setState({ show: WorkoutEditor });
@@ -23,8 +20,8 @@ class Selector extends React.Component {
     if (this.state.show === SelectorDefault) {
       return (
         <div>
-          <button onClick={this.showCurrent}>current workout</button>
-          <button onClick={this.showEditor}>edit workout</button>
+          <Button onClick={this.showCurrent}>current workout</Button>
+          <Button onClick={this.showEditor}>edit workout</Button>
           <SelectorDefault />
         </div>
       );
@@ -33,7 +30,7 @@ class Selector extends React.Component {
     if (this.state.show === CurrentDay) {
       return (
         <div>
-          <button onClick={this.showEditor}>edit workout</button>
+          <Button onClick={this.showEditor}>edit workout</Button>
           <CurrentDay />
         </div>
       );
@@ -42,7 +39,8 @@ class Selector extends React.Component {
     if (this.state.show === WorkoutEditor) {
       return (
         <div>
-          <button onClick={this.showCurrent}>current workout</button>
+          <Button onClick={this.showCurrent}>current workout</Button>
+
           <WorkoutEditor
             day={this.props.day}
             exercises={this.props.exercises}

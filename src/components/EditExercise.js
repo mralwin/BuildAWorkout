@@ -13,7 +13,6 @@ class EditExercise extends React.Component {
   };
 
   handleClick = () => {
-    alert("yo");
     this.props.deleteExercise(this.props.day, this.props.index);
   };
 
