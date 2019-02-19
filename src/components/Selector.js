@@ -7,6 +7,7 @@ import Button from "./button";
 class Selector extends React.Component {
   state = { show: SelectorDefault };
 
+
   showEditor = () => {
     this.setState({ show: WorkoutEditor });
   };
@@ -39,6 +40,7 @@ class Selector extends React.Component {
       return (
         <div>
           <Button onClick={this.showCurrent}>current workout</Button>
+
           <WorkoutEditor
             day={this.props.day}
             exercises={this.props.exercises}
