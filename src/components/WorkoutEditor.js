@@ -1,12 +1,12 @@
 import React from "react";
 import Day from "./day";
 
-class Week extends React.Component {
+class WorkoutEditor extends React.Component {
   render() {
     const props = this.props;
     return (
       <div>
-        <h2> i am a week </h2>
+        <h2> i am a workout editor </h2>
         {Object.keys(this.props.day).map(key => (
           <Day
             key={key}
@@ -22,4 +22,4 @@ class Week extends React.Component {
   }
 }
 
-export default Week;
+export default WorkoutEditor;
